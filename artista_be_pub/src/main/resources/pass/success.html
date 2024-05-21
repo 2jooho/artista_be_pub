@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="ko" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<title>본인인증 성공결과</title>
+</head>
+<body onload="setData()">
+
+<!--<div>-->
+<!--    <p id="name" th:text="${'이름 : ' + dto.getName()}"> </p>-->
+<!--    <p th:text="${'전화번호 : ' + dto.getPhone()}"> </p>-->
+<!--    <p th:text="${'성별 : ' + dto.getGender()}"> </p>-->
+<!--    <p th:text="${'sMessage : ' + sMessage.sMessage}"> </p>-->
+<!--</div>-->
+
+
+
+<script th:inline="javascript">
+    /* 본인 인증 모듈 실행 */
+    function setData() {
+        opener.document.getElementById("name").value = [[${dto.getName}]];
+        // opener.document.getElementById("birth").value = dto.getBirth();
+        // opener.document.getElementById("phone").value = dto.getPhone();
+        window.close();
+    }
+
+</script>
+</body>
+</html>
